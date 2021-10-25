@@ -1,4 +1,4 @@
-## 初始化项目
+## 1.初始化项目
 
 ### 1.1安装 Node.js
 
@@ -48,15 +48,26 @@ docsify init ./docs
 
 输入命令：dir 可以查看当前目录。
 
-如果想在特定目录新建项目，例如：cd d:note，会进入D盘的note文件夹，再执行初始化命令。
+如果想在特定目录新建项目，例如：cd d:note，会进入 D 盘的 note 文件夹，再执行初始化命令。
 
 ### 1.4本地实时预览
 
 输入如下命令，启动一个本地服务器，可以实时预览效果。默认访问地址：[http://localhost:3000](http://localhost:3000 ) 。
 
 ```
+// 如果当前已在 docs 目录里，则使用 docsify serve 即可
 docsify serve docs
 ```
 
+## 2.部署到 Github
 
+Github、GiTee 都可以用来部署，但是Github的流程更简单，这里以Github为例。
+
+### 2.1上传到 Github 仓库
+
+新建仓库 Blog，不做任何设置，将 docs 文件夹上传到仓库即可。
+
+### 2.2开启 GithubPage
+
+进入仓库 Blog，点击 Settings，下滑找到 GitHub Pages，Source 选择 master branch/docs folder，然后 save。按照提示访问  https://xxx.github.io/Blog 就能看到首页了。
 
