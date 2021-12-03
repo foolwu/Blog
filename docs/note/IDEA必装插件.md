@@ -4,7 +4,7 @@
 
 ### Alibaba Java Coding Guidelines
 
-代码规范检查，来自业界公认最好Java规范 Alibaba。可以自动的帮我们检查自己写的代码是否符合规范。
+代码规范检查，来自业界公认最好 Java 规范 Alibaba。可以自动的帮我们检查自己写的代码是否符合规范。
 
 ### Translation
 
@@ -12,4 +12,4 @@
 
 ### Free Mybatis plugin
 
-生成xml文件，从代码快速跳到mapper等。
+生成 xml 文件，从代码快速跳到 mapper 等。

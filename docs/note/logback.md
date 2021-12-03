@@ -1,6 +1,6 @@
 目前比较流行的日志框架有 log4j、logback 等，Logback 是 log4j 的后续版本。另外 slf4j(Simple Logging Facade for Java) 则是一个日志门面框架，提供了日志系统中常用的接口，logback 和 log4j 则对 slf4j 进行了实现。
 
-### 添加依赖
+## 添加依赖
 
 ```xml
 <dependency>
@@ -18,7 +18,7 @@
 </dependency>
 ```
 
-### 默认配置
+## 默认配置
 
 默认情况下日志输出到控制台，若还想输入到文件，需在 application.properties 中设置 logging.file 或 logging.path 属性。
 
@@ -31,7 +31,7 @@ logging.level.包名=指定包下的日志级别
 logging.pattern.console=日志打印规则
 ```
 
-### logback-spring.xml 详解
+## logback-spring.xml 详解
 
 默认配置只能实现基本功能，要想实现定制化功能，需要使用配置文件。
 
@@ -85,22 +85,22 @@ logging.config=classpath:xxx.xml
     <!-- info 日志-->
     <!-- RollingFileAppender：滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件 -->
     <!-- 1.先按日期存日志，日期变了，将前一天的日志文件名重命名为 XXX% 日期 % 索引，新的日志仍然是 info.log -->
-    <!-- 2.如果日期没有发生变化，但是当前日志的文件大小超过 10MB 时，对当前日志进行分割重命名 -->
+    <!-- 2.如果日期没有发生变化，但是当前日志的文件大小超过 20MB 时，对当前日志进行分割重命名 -->
     <appender name="info" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!--日志文件路径和名称-->
         <File>logs/info.log</File>
         <!--是否追加到文件末尾,默认为 true-->
         <append>true</append>
         <!-- 滚动策略 -->
-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 文件名：logs/info.2017-12-05.0.log -->
             <!-- 注意：SizeAndTimeBasedRollingPolicy 中，％i 和 ％d 令牌都是强制性的，必须存在，要不会报错 -->
-            <fileNamePattern>${Log_Home}/info.%d.%i.log</fileNamePattern>
+            <fileNamePattern>${Log_Home}/info-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <!-- 每个日志文件的保存期限为 30 天,如果定义为 yyyy-MM,则单位为月,默认 yyyy-MM-dd -->
             <maxHistory>${maxHistory}</maxHistory>
-            <!-- 每个日志文件到 10mb 的时候开始切分，最多保留 30 天，最大到 20GB，1.1.6 后支持 -->
-            <totalSizeCap>20GB</totalSizeCap>
-            <maxFileSize>${maxFileSize}</maxFileSize>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>${maxFileSize}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <!-- 编码器 -->
         <encoder>
@@ -124,11 +124,12 @@ logging.config=classpath:xxx.xml
     <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>logs/error.log</File>
         <append>true</append>
-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${Log_Home}/error.%d.%i.log</fileNamePattern>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${Log_Home}/error-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <maxHistory>30</maxHistory>
-            <totalSizeCap>20GB</totalSizeCap>
-            <maxFileSize>10MB</maxFileSize>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>${maxFileSize}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <encoder>
             <pattern>${Pattern}</pattern>
