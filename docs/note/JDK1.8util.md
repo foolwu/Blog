@@ -10,8 +10,6 @@
 
 ## 类图
 
-![image-20211203110644198](JDK1.8util.assets/image-20211203110644198.png)
-
 从类图可以看到 ArrayList 实现了很多接口，其中 Cloneabled、RandomAccess、Serializable是空的，可以略过。主要看List接口
 
 ## 构造函数

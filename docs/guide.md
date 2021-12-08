@@ -11,3 +11,5 @@
 ### 实践
 
 [logback](note/logback)
+
+[Nginx](/note/Nginx)
