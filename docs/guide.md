@@ -4,6 +4,12 @@
 
 ### Java
 
+[Java基础](/note/Java基础)
+
+[JVM](/note/JVM)
+
+[JDK源码阅读](/note/JDK1.8util)
+
 ### 数据库
 
 [MySQL](note/MySQL)
@@ -13,3 +19,4 @@
 [logback](note/logback)
 
 [Nginx](/note/Nginx)
+

@@ -2,7 +2,7 @@
 
 ## limit_req_zone
 
-作用：限制单位时间内的请求数，即速率限制,采用的漏桶算法 "leaky bucket"。
+作用：限制单位时间内的请求数，即速率限制,采用漏桶算法 "leaky bucket"。
 
 ```bash
 limit_req_zone $binary_remote_addr zone=limit:10m rate=2r/s;
@@ -14,7 +14,7 @@ server {
 }
 ```
 
-zone=one:10m，表示生成一个大小为 10M，名字为 one 的内存区域，用来存储访问的频次信息。
+zone=limit:10m，表示生成一个大小为 10M，名字为 limit 的内存区域，用来存储访问的频次信息。
 
 rate=2r/s，每秒允许通过同一 IP 下 2 个请求，由于 nginx 是按毫秒匀速计算的，所以是每 500ms 允许通过一个请求，如果 500ms 内有 2 个请求过来，只能通过一个。
 

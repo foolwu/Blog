@@ -3,9 +3,8 @@
 ### 1.1 安装 Node.js
 
 下载地址：https://nodejs.org/dist/v8.9.4/node-v8.9.4-x64.msi
-下载完成后点击安装。
-查看 node 版本，命令：node -v
-版本：v8.9.4
+
+下载完成后点击安装，查看 node 版本，命令：node -v
 
 ### 1.2 安装 docsify-cli 工具
 
@@ -37,7 +36,7 @@ docsify -v
 docsify init ./docs
 ```
 
-会在当前目录下新建一个 docs 文件夹，并初始化项目，结构如下。
+会在当前目录下新建一个 docs 文件夹，并初始化项目，结构如下：
 
 ```bash
  -| docs/

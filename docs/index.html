@@ -19,8 +19,7 @@
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 
-
-<script>
+  <script>
     window.$docsify = {
       name: 'Blog',
       repo: 'https://github.com/foolwu/Blog',
@@ -30,14 +29,21 @@
       alias: { // 定义路由别名，可以更自由的定义路由规则。 支持正则
         '/.*/_navbar.md': '/_navbar.md'
       }
-    }
+	}
   </script>
-
-
+  
   <script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-java.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-sql.js"></script>
 
   <script src="//unpkg.com/docsify-copy-code"></script>
+
+  //设置图片居中
+  <style>
+    img{
+      display:flex;
+      margin:0 auto;
+    }
+  </style>
 </body>
 </html>
