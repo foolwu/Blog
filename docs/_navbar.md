@@ -1,6 +1,6 @@
 * [快速导航](guide)
 * Java
-  * [Java基础](/note/Java基础)
+  * [Java基础](note/Java基础)
   * [JVM](/note/JVM)
   * [JDK源码阅读](/note/JDK1.8util)
 * 数据库
@@ -13,3 +13,5 @@
 * 实践
   * [利用 docsify 部署文档](/note/利用docsify部署文档)
   * [Nginx](/note/Nginx)
+  * [正则匹配汇总](/note/正则匹配汇总)
+
