@@ -16,7 +16,9 @@
 
 ### 实践
 
-[logback](note/logback)
+[logback](note/实践/logback)
 
-[Nginx](/note/Nginx)
+[Nginx](/note/实践/Nginx)
+
+[SpringBoot](/note/实践/SpringBoot)
 
