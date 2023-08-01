@@ -1,6 +1,6 @@
 # 打包排除内嵌依赖
 
-## 1.exclusions 排除打包的jar包
+## 1.exclusions 排除不需要的jar包
 
 ```xml
 <dependency>
@@ -15,7 +15,7 @@
  </dependency>
 ```
 
-## 2.provided-编译和测试时使用，打包时不需要的依赖
+## 2.provided-表示仅编译和测试时使用，打包时不需要的依赖
 
 ```xml
 <dependency>
